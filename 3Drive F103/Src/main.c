@@ -525,9 +525,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
   /* Get RX message */
   HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, CANRxData);
-		////for debug///////
-		//	GPIOC->ODR = 0 << 13;for(uint16_t i = 0;i<65535;i++){};
-			////end debug////////	
+
 	// if massege from 1st block
 	if ((RxHeader.StdId & 0xFF00) == 0x0300)
 	{
